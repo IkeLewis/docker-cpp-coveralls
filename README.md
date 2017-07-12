@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/IkeLewis/docker-cpp-coveralls.svg?branch=master)](https://travis-ci.org/IkeLewis/docker-cpp-coveralls)
+
 docker-cpp-coveralls
 ====================
 
