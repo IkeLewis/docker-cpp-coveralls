@@ -15,7 +15,7 @@ pip download cpp-coveralls --no-cache-dir --no-binary :all
 set -e
 
 # If that fails, then
-if [ $? -ne 0 || $INSTALL_TYPE="OFFLINE" ]; then
+if [[ $? -ne 0 || $INSTALL_TYPE=="OFFLINE" ]]; then
 
     # try to use files from the build context.
     cd /cpp-coveralls-bc
