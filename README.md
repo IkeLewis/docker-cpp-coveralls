@@ -1,7 +1,7 @@
 docker-cpp-coveralls
 ====================
 
-The *docker-cpp-coveralls* repository may be used to install
+The docker-cpp-coveralls repository may be used to install
 cpp-coveralls (in a docker container) in either an online setting or
 an offline high-security setting.
 
@@ -15,15 +15,15 @@ $ docker pull ikelewis/cpp-coveralls
 Offline Requirements
 --------------------
 
-(1) Docker
-(2) A private Debian mirror
+1) Docker
+2) A private Debian mirror
 
 Pre-Installation for Offline Machines
 -------------------------------------
 
-Clone *docker-cpp-coveralls* on a device (e.g. an sd-card) that can
+Clone docker-cpp-coveralls on a device (e.g. an sd-card) that can
 later be placed in read-only mode, and then run
-*download-cpp-coveralls.sh* from the repo directory.
+download-cpp-coveralls.sh from the repo directory.
 
 ```
 $ git clone https://github.com/IkeLewis/docker-cpp-coveralls
@@ -51,7 +51,7 @@ Command line Usage
 ------------------
 
 ```
-$ docker run -v <your-project-dir>:/project-for-ca -w /project-for-ca
+$ docker run -v <your-project-dir>:/project-for-ca -w /project-for-ca \
 cpp-coveralls <cpp-coveralls-options>
 ```
 
