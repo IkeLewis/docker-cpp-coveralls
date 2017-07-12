@@ -1,0 +1,23 @@
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - sudo apt-get --yes install python python-pip
+    - ./download-cpp-coveralls.sh
+
+    - docker build --build-arg=INSTALL_TYPE="OFFLINE" -t
+      ikelewis/cpp-coveralls:offline-sim .
+
+    - docker build -t ikelewis/cpp-coveralls .
+
+script:
+    - docker run ikelewis/cpp-coveralls:offline-sim
+    - docker run ikelewis/cpp-coveralls
+
+after_success:
+    - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+          docker push ikelewis/cpp-coveralls;
+      fi
