@@ -3,9 +3,8 @@
 docker-cpp-coveralls
 ====================
 
-The docker-cpp-coveralls repository may be used to install
-cpp-coveralls (in a docker container) in either an online setting or
-an offline high-security setting.
+Dockerize [cpp-coveralls](https://github.com/eddyxu/cpp-coveralls)
+(run cpp-coveralls in a docker container).
 
 Online Installation (via docker)
 --------------------------------
