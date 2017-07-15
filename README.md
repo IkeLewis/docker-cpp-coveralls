@@ -6,21 +6,43 @@ docker-cpp-coveralls
 Dockerize [cpp-coveralls](https://github.com/eddyxu/cpp-coveralls)
 (run cpp-coveralls in a docker container).
 
-Online Installation (via docker)
---------------------------------
+Online Installation
+-------------------
 
 ```
 $ docker pull ikelewis/cpp-coveralls
 ```
 
-Offline Requirements
+Pre-Offline Installation
+------------------------
+
+Pull the image from Docker Hub, and then save it to a device
+(e.g. an sd-card) that can later be placed in read-only mode.
+
+```
+$ docker pull ikelewis/cpp-coveralls
+$ docker save -o cpp-coveralls.tar ikelewis/cpp-coveralls
+```
+
+Offline Installation
 --------------------
+
+Make sure the device used in the previous step is in read-only mode
+before inserting/connecting it to the desired machine in your offline
+network.  Then load the image onto the machine.
+
+```
+$ docker load -i cpp-coveralls.tar
+```
+
+Offline Build Requirements (Advanced)
+-------------------------------------
 
 1) Docker
 2) A private Debian mirror
 
-Pre-Installation for Offline Machines
--------------------------------------
+Pre-Offline Build
+-----------------
 
 Clone docker-cpp-coveralls on a device (e.g. an sd-card) that can
 later be placed in read-only mode, and then run
@@ -32,18 +54,20 @@ $ cd docker-cpp-coveralls
 $ ./download-cpp-coveralls.sh.
 ```
 
-Offline Installation
---------------------
+Offline Build
+-------------
 
 1) Make sure the device used in the pre-installation is in read-only
    mode and then insert/connect it to the desired machine in your
    offline network.
 
-2) Clone docker-cpp-coveralls to your docker projects directory.  Then
-   build as usual.
+2) Change to your docker projects directory, copy
+   docker-cpp-coveralls, then build as usual.
 
    ```
-   $ git clone </path/to/docker-cpp-coveralls>
+   $ cd /your/docker/projects
+
+   $ copy -R /path/to/docker-cpp-coveralls .
 
    $ docker build -t ikelewis/cpp-coveralls .
    ```
@@ -53,7 +77,7 @@ Command line Usage
 
 ```
 $ docker run -v <your-project-dir>:/project-for-ca -w /project-for-ca \
-cpp-coveralls <cpp-coveralls-options>
+  cpp-coveralls <cpp-coveralls-options>
 ```
 
 Removal
