@@ -9,7 +9,7 @@ before_install:
 
     - docker build --build-arg=INSTALL_TYPE="OFFLINE" -t
       ikelewis/cpp-coveralls:offline-sim .
-    - sleep 240
+    - sleep 480
     - docker build -t ikelewis/cpp-coveralls .
 
 script:
