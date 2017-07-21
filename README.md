@@ -72,7 +72,7 @@ Offline Build
    $ docker build -t ikelewis/cpp-coveralls .
    ```
 
-Command line Usage
+Command Line Usage
 ------------------
 
 ```
