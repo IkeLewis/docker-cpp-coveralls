@@ -13,7 +13,7 @@ set -e
 # If that fails or we're doing an offline install, 
 if [[ $? -ne 0 || $INSTALL_TYPE == "OFFLINE" ]]; then
 
-    # try to use files from the build context.
+    # try to use files from the build context (see Dockerfile).
     cd /cpp-coveralls-bc
 
 fi
