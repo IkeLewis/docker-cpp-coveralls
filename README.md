@@ -35,43 +35,6 @@ network.  Then load the image onto the machine.
 $ docker load -i cpp-coveralls.tar
 ```
 
-Offline Build Requirements (Advanced)
--------------------------------------
-
-1) Docker
-2) A private Debian mirror
-
-Pre-Offline Build
------------------
-
-Clone docker-cpp-coveralls on a device (e.g. an sd-card) that can
-later be placed in read-only mode, and then run
-download-cpp-coveralls.sh from the repo directory.
-
-```
-$ git clone https://github.com/IkeLewis/docker-cpp-coveralls
-$ cd docker-cpp-coveralls
-$ ./download-cpp-coveralls.sh.
-```
-
-Offline Build
--------------
-
-1) Make sure the device used in the pre-installation is in read-only
-   mode and then insert/connect it to the desired machine in your
-   offline network.
-
-2) Change to your docker projects directory, copy
-   docker-cpp-coveralls, then build as usual.
-
-   ```
-   $ cd /your/docker/projects
-
-   $ copy -R /path/to/docker-cpp-coveralls .
-
-   $ docker build -t ikelewis/cpp-coveralls .
-   ```
-
 Command Line Usage
 ------------------
 
