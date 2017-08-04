@@ -1,14 +1,5 @@
 #!/bin/bash -ex
 
-apt-get update
-
-# To help prevent this docker container from being blocked by the
-# Debian mirrors, the following line is commented out.
-
-# apt-get upgrade -y
-
-apt-get install -y python python-pip
-
 mkdir /cpp-coveralls-download
 cd /cpp-coveralls-download
 

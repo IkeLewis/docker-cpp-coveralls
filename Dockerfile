@@ -11,8 +11,7 @@
 # $ docker run -v <your-project-dir>:/project-for-ca -w \
 #   /project-for-ca cpp-coveralls <cpp-coveralls-options>
 
-
-FROM debian
+FROM python:2
 
 # This variable is used only for testing purposes.
 ARG INSTALL_TYPE="ONLINE"
